@@ -1,0 +1,14 @@
+service: s3-uploader
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: python3.9
+
+functions:
+  hello:
+    handler: app.handler.hello
+    events:
+      - httpApi:
+          path: /
+          method: get
